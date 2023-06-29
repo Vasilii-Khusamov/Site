@@ -6,4 +6,5 @@ export function testPointConstructor() {
     if (point.x !== 1 || point.y !== 2) {
         throw new Error(`Конструктор работает неправильно ${point.x} ${point.y}`)
     }
+    return true
 }
