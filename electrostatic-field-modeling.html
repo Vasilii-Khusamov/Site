@@ -1,18 +1,17 @@
 ﻿<!DOCTYPE html>
 
 <html>
-    <head>
-        <title>canvasExample</title>
-        <meta charset='utf-8' />
-    </head>
-    <body>
-        <canvas height='320' width='480' id='example'>
-            Ваш браузер не поддерживает тег canvas.
-        </canvas>
-        <script>
-			    var example = document.getElementById("example"),
-			        ctx     = example.getContext('2d');
-			    ctx.fillRect(0, 0, example.width, example.height);
-        </script>
-    </body>
+	<head>
+		<title>Симуляция электростатического поля</title>
+		<meta charset='utf-8' />
+		<link rel="stylesheet" href="./electrostatic-field-modeling.css">
+	</head>
+	<body>
+        <div id='example'>
+            <canvas>
+                Ваш браузер не поддерживает тег canvas.
+            </canvas>
+        </div>
+		<script type="module" src="./electrostatic-field-modeling.js"></script>
+	</body>
 </html>
