@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "serve": "npx serve",
+    "serve": "npx http-server --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vasilii",
