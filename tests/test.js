@@ -9,7 +9,7 @@ const tests = [
     testCalculateDistanceBetweenPoints,
     testPointConstructor,
     testVectorConstructor
-]
+	testSubtractVectors
 
 for (const test of tests) {
     try {
