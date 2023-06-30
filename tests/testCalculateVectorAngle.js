@@ -2,7 +2,7 @@ import {calculateVectorAngle} from '../Math/VectorOperations/calculateVectorAngl
 import {Vector} from '../Math/Vector.js';
 
 export function testCalculateVectorAngle(){
-	const resultAngle = calculateVectorAngle(new Vector(0, 1), new Vector(1, 0);
+	const resultAngle = calculateVectorAngle(new Vector(0, 1), new Vector(1, 0))
 	const expectedAngle = Math.PI / 2
 	const epsilon = 0.0000000001
 	if (Math.abs(resultAngle - expectedAngle) > epsilon) {
