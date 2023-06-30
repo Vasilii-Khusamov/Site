@@ -1,12 +1,14 @@
 import { testCalculateDistanceBetweenPoints } from "./testCalculateDistanceBetweenPoints.js"
 import { testPointConstructor } from './testPointConstructor.js'
+import { testVectorConstructor } from './testVectorConstructor.js'
 
 
 
 
 const tests = [
     testCalculateDistanceBetweenPoints,
-    testPointConstructor
+    testPointConstructor,
+    testVectorConstructor
 ]
 
 for (const test of tests) {
