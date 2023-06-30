@@ -1,4 +1,4 @@
-import { Vector } from '../Math/Vector'
+import { Vector } from '../Math/Vector.js'
 
 export function testVectorConstructor() {
     const vector = new Vector(1, 2)
