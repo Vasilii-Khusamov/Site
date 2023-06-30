@@ -2,6 +2,7 @@ import {testCalculateDistanceBetweenPoints} from './testCalculateDistanceBetween
 import {testCalculateVectorAngle} from './testCalculateVectorAngle.js';
 import {testCalculateVectorAngleByAxisX} from './testCalculateVectorAngleByAxisX.js';
 import {testCalculateVectorLength} from './testCalculateVectorLength.js';
+import {testMultiplyMatrixByVector} from './testMultiplyMatrixByVector.js';
 import {testMultiplyVectorByNumber} from './testMultiplyVectorByNumber.js';
 import {testPointConstructor} from './testPointConstructor.js';
 import {testSubtractVectors} from './testSubtractVectors.js';
@@ -15,7 +16,8 @@ const tests = [
 	testCalculateVectorAngle,
 	testCalculateVectorAngleByAxisX,
 	testCalculateVectorLength,
-	testMultiplyVectorByNumber
+	testMultiplyVectorByNumber,
+	testMultiplyMatrixByVector
 ];
 
 for (const test of tests) {
