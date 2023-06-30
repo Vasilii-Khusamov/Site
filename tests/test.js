@@ -1,6 +1,6 @@
 import {testCalculateDistanceBetweenPoints} from './testCalculateDistanceBetweenPoints.js';
 import {testPointConstructor} from './testPointConstructor.js';
-import {testSubtractVectors} from './testSubtractVectors';
+import {testSubtractVectors} from './testSubtractVectors.js';
 import {testVectorConstructor} from './testVectorConstructor.js';
 
 const tests = [
