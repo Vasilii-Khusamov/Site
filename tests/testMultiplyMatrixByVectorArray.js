@@ -8,7 +8,7 @@ export function testMultiplyMatrixByVectorArray(){
 	]
 	const vectorArray = [new Vector(1, 2), new Vector(3, 4)]
 	const resultVectorArray = multiplyMatrixByVectorArray(matrix, vectorArray)
-	const expectedVectorArray = [new Vector(5, 5), new Vector(13,13)]
+	const expectedVectorArray = [new Vector(6, 6), new Vector(14,14)]
 	const epsilon = 0.00000000001
 
 	for (let i = 0; i < 2; i++){
