@@ -3,6 +3,7 @@ import {testCalculateVectorAngle} from './testCalculateVectorAngle.js';
 import {testCalculateVectorAngleByAxisX} from './testCalculateVectorAngleByAxisX.js';
 import {testCalculateVectorLength} from './testCalculateVectorLength.js';
 import {testMultiplyMatrixByVector} from './testMultiplyMatrixByVector.js';
+import {testMultiplyMatrixByVectorArray} from './testMultiplyMatrixByVectorArray.js';
 import {testMultiplyVectorByNumber} from './testMultiplyVectorByNumber.js';
 import {testPointConstructor} from './testPointConstructor.js';
 import {testSubtractVectors} from './testSubtractVectors.js';
@@ -17,7 +18,8 @@ const tests = [
 	testCalculateVectorAngleByAxisX,
 	testCalculateVectorLength,
 	testMultiplyVectorByNumber,
-	testMultiplyMatrixByVector
+	testMultiplyMatrixByVector,
+	testMultiplyMatrixByVectorArray
 ];
 
 for (const test of tests) {
