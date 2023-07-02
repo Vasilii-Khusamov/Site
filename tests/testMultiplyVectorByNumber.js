@@ -1,5 +1,6 @@
 import {Vector} from '../Math/Vector.js';
 import {multiplyVectorByNumber} from '../Math/VectorOperations/multiplyVectorByNumber.js';
+import {TestError} from './TestError.js';
 
 export function testMultiplyVectorByNumber(){
 	const resultVector = multiplyVectorByNumber(new Vector(1, 2), 2)
@@ -7,7 +8,7 @@ export function testMultiplyVectorByNumber(){
 	const epsilon = 0.0000000001
 
 	if (Math.abs(resultVector - expectedVector) > epsilon){
-		throw new Error(`Ожидался вектор равный ${expectedVector}, но он равен ${resultVector}`)
+		throw new TestError(`Ожидался вектор равный ${expectedVector}, но он равен ${resultVector}`)
 	}
 	return true
 }

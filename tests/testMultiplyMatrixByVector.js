@@ -1,5 +1,6 @@
 import {multiplyMatrixByVector} from '../Math/MatrixOperations/multiplyMatrixByVector.js';
 import {Vector} from '../Math/Vector.js';
+import {TestError} from './TestError.js';
 
 export function testMultiplyMatrixByVector(){
 	const matrix = [
@@ -12,7 +13,7 @@ export function testMultiplyMatrixByVector(){
 	const epsilon = 0.0000000001
 
 	if (Math.abs(resultVector.x - expectedVector.x) > epsilon || Math.abs(resultVector.y - expectedVector.y) > epsilon){
-		throw new Error(`Ожидался вектор равным ${expectedVector}, но он равен ${resultVector}`)
+		throw new TestError(`Ожидался вектор равным ${expectedVector}, но он равен ${resultVector}`)
 	}
 	return true
 }

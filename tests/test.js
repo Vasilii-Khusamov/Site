@@ -2,6 +2,7 @@ import {testCalculateDistanceBetweenPoints} from './testCalculateDistanceBetween
 import {testCalculateVectorAngle} from './testCalculateVectorAngle.js';
 import {testCalculateVectorAngleByAxisX} from './testCalculateVectorAngleByAxisX.js';
 import {testCalculateVectorLength} from './testCalculateVectorLength.js';
+import {TestError} from './TestError.js';
 import {testMultiplyMatrixByVector} from './testMultiplyMatrixByVector.js';
 import {testMultiplyMatrixByVectorArray} from './testMultiplyMatrixByVectorArray.js';
 import {testMultiplyVectorByNumber} from './testMultiplyVectorByNumber.js';
@@ -29,6 +30,10 @@ for (const test of tests) {
 		const delta = Date.now() - start;
 		console.log(test.name, 'OK', `${delta} мс`);
 	} catch (error) {
-		console.log(test.name, error.message);
+		if (error instanceof TestError) {
+			console.log(test.name, error.message);
+		} else {
+			throw error
+		}
 	}
 }

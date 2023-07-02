@@ -1,5 +1,6 @@
 import {multiplyMatrixByVectorArray} from '../Math/MatrixOperations/multiplyMatrixByVectorArray.js';
 import {Vector} from '../Math/Vector.js';
+import {TestError} from './TestError.js';
 
 export function testMultiplyMatrixByVectorArray(){
 	const matrix = [
@@ -13,7 +14,7 @@ export function testMultiplyMatrixByVectorArray(){
 
 	for (let i = 0; i < 2; i++){
 		if (Math.abs(resultVectorArray[i].x - expectedVectorArray[i].x) > epsilon || Math.abs(resultVectorArray[i].y - expectedVectorArray[i].y) > epsilon){
-			throw new Error(`Ожидался массив равный ${expectedVectorArray}, но он равен ${resultVectorArray}`)
+			throw new TestError(`Ожидался массив равный ${expectedVectorArray}, но он равен ${resultVectorArray}`)
 		}
 	}
 	return true

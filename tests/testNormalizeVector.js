@@ -1,5 +1,6 @@
 import {Vector} from '../Math/Vector.js';
 import {normalizeVector} from '../Math/VectorOperations/normalizeVector.js';
+import {TestError} from './TestError.js';
 
 export function testNormalizeVector(){
 	const resultVector = normalizeVector(new Vector(1, 2))
@@ -7,7 +8,7 @@ export function testNormalizeVector(){
 	const epsilon = 0.00000000000001
 
 	if (Math.abs(resultVector.x - expectedVector.x) > epsilon || Math.abs(resultVector.y - expectedVector.y) > epsilon){
-		throw new Error(`Ожидался вектор равный ${expectedVector}, но он равен ${resultVector}`)
+		throw new TestError(`Ожидался вектор равный ${expectedVector}, но он равен ${resultVector}`)
 	}
 	return true
 }
