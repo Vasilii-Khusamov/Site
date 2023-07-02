@@ -2,6 +2,7 @@ import {testCalculateDistanceBetweenPoints} from './testCalculateDistanceBetween
 import {testCalculateVectorAngle} from './testCalculateVectorAngle.js';
 import {testCalculateVectorAngleByAxisX} from './testCalculateVectorAngleByAxisX.js';
 import {testCalculateVectorLength} from './testCalculateVectorLength.js';
+import {testCreateAxisXArrowVertexes} from './testCreateAxisXArrowVertexes.js';
 import {testDrawArrowOnCanvasContext2D} from './testDrawArrowOnCanvasContext2D.js';
 import {TestError} from './TestError.js';
 import {testMultiplyMatrixByVector} from './testMultiplyMatrixByVector.js';
@@ -22,7 +23,8 @@ const tests = [
 	testMultiplyVectorByNumber,
 	testMultiplyMatrixByVector,
 	testMultiplyMatrixByVectorArray,
-	testDrawArrowOnCanvasContext2D
+	testDrawArrowOnCanvasContext2D,
+	testCreateAxisXArrowVertexes
 ];
 
 for (const test of tests) {
