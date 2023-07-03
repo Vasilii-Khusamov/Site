@@ -6,5 +6,5 @@
  * @returns
  */
 export function calculateVectorAngleByAxisX(vector) {
-	return Math.atan2(vector.x, vector.y)
+	return Math.atan2(vector.y, vector.x)
 }
