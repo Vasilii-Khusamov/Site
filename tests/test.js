@@ -4,6 +4,7 @@ import {testCalculateVectorAngleByAxisX} from './testCalculateVectorAngleByAxisX
 import {testCalculateVectorLength} from './testCalculateVectorLength.js';
 import {testCreateArrowVertexes} from './testCreateArrowVertexes.js'
 import {testCreateAxisXArrowVertexes} from './testCreateAxisXArrowVertexes.js';
+import {testDrawArrow} from './testDrawArrow.js'
 import {testDrawArrowOnCanvasContext2D} from './testDrawArrowOnCanvasContext2D.js';
 import {TestError} from './TestError.js';
 import {testMultiplyMatrixByVector} from './testMultiplyMatrixByVector.js';
@@ -26,7 +27,8 @@ const tests = [
 	testMultiplyMatrixByVectorArray,
 	testDrawArrowOnCanvasContext2D,
 	testCreateAxisXArrowVertexes,
-	testCreateArrowVertexes
+	testCreateArrowVertexes,
+	testDrawArrow
 ];
 
 for (const test of tests) {
