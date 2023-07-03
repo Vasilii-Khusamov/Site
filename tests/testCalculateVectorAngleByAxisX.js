@@ -4,7 +4,7 @@ import {TestError} from './TestError.js';
 
 export function testCalculateVectorAngleByAxisX(){
 	const resultAngle = calculateVectorAngleByAxisX(new Vector(1, 0))
-	const expectedAngle = Math.PI / 2
+	const expectedAngle = 0
 	const epsilon = 0.000000000001
 
 	if (Math.abs(resultAngle - expectedAngle) > epsilon){
