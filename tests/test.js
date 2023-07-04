@@ -12,6 +12,7 @@ import {testMultiplyMatrixByVectorArray} from './testMultiplyMatrixByVectorArray
 import {testMultiplyVectorByNumber} from './testMultiplyVectorByNumber.js';
 import {testPointConstructor} from './testPointConstructor.js';
 import {testSubtractVectors} from './testSubtractVectors.js';
+import {testTransformToScreen} from './testTransformToScreen.js'
 import {testVectorConstructor} from './testVectorConstructor.js';
 
 const tests = [
@@ -28,7 +29,8 @@ const tests = [
 	testDrawArrowOnCanvasContext2D,
 	testCreateAxisXArrowVertexes,
 	testCreateArrowVertexes,
-	testDrawArrow
+	testDrawArrow,
+	testTransformToScreen
 ];
 
 for (const test of tests) {
