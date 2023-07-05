@@ -1,4 +1,5 @@
 import {testCalculateDistanceBetweenPoints} from './testCalculateDistanceBetweenPoints.js';
+import {testCalculateElectrostaticFieldIntensity} from './testCalculateElectrostaticFieldIntensity.js'
 import {testCalculateVectorAngle} from './testCalculateVectorAngle.js';
 import {testCalculateVectorAngleByAxisX} from './testCalculateVectorAngleByAxisX.js';
 import {testCalculateVectorLength} from './testCalculateVectorLength.js';
@@ -30,7 +31,8 @@ const tests = [
 	testCreateAxisXArrowVertexes,
 	testCreateArrowVertexes,
 	testDrawArrow,
-	testTransformToScreen
+	testTransformToScreen,
+	testCalculateElectrostaticFieldIntensity
 ];
 
 for (const test of tests) {
