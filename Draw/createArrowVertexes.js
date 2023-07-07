@@ -12,12 +12,29 @@ import {Point} from '../Point.js';
  * @param {Vector[]} normalizedArrowVertexes
  * */
 export function createArrowVertexes(point1, point2, normalizedArrowVertexes){
-	const arrowAngle = calculateVectorAngleByAxisX(new Vector(point2.x - point1.x, point2.y - point1.y))
-	const arrowPosition = new Vector(point1.x, point1.y)
 	let resultArrowVertexes = []
-	for (const normalizedVertex of normalizedArrowVertexes) {
-		resultArrowVertexes.push(new Point(normalizedVertex.x + arrowPosition.x, normalizedVertex.y + arrowPosition.y))
+
+	// Вращаем стрелку
+	const arrowAngle = calculateVectorAngleByAxisX(new Vector(point2.x - point1.x, point2.y - point1.y))
+	const rotationMatrix = createRotationMatrix(arrowAngle)
+
+	resultArrowVertexes = multiplyMatrixByVectorArray(rotationMatrix, normalizedArrowVertexes)
+
+	// Перемещаем стрелку
+
+
+	const arrowPosition = new Vector(point1.x, point1.y)
+
+	let resultArrowVertexes2 = []
+	for (const normalizedVertex of resultArrowVertexes) {
+		resultArrowVertexes2.push(
+			new Vector(
+				normalizedVertex.x + arrowPosition.x,
+				normalizedVertex.y + arrowPosition.y
+			)
+		)
 	}
-	resultArrowVertexes = multiplyMatrixByVectorArray(createRotationMatrix(arrowAngle), resultArrowVertexes)
-	return resultArrowVertexes
+
+
+	return resultArrowVertexes2
 }
