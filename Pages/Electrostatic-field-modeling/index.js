@@ -3,6 +3,14 @@ import {drawArrowOnCanvasContext2D} from '../../Library/Draw/drawArrowOnCanvasCo
 import {transformToScreen} from '../../Library/Draw/transformToScreen.js'
 import {Point} from '../../Library/Math/Point.js'
 import {Vector} from '../../Library/Math/Vector.js'
+import {addVectors} from '../../Library/Math/VectorOperations/addVectors.js'
+import {calculateVectorAngleByAxisX} from '../../Library/Math/VectorOperations/calculateVectorAngleByAxisX.js'
+import {calculateVectorLength} from '../../Library/Math/VectorOperations/calculateVectorLength.js'
+import {multiplyVectorByNumber} from '../../Library/Math/VectorOperations/multiplyVectorByNumber.js'
+import {normalizeVector} from '../../Library/Math/VectorOperations/normalizeVector.js'
+import {
+	calculateElectrostaticFieldIntensityVector
+} from '../../Library/Physics/calculateElectrostaticFieldIntensityVector.js'
 
 // ctx.fillRect(x,y,1,1) // fill in the pixel at x, y
 
@@ -13,18 +21,55 @@ ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 
 const scale = 100
-const gridStepInMeters = 1
+const gridStepInMeters = .5
 
-const charge = [2, -1, 5]
-const chargePosition = [new Vector(1, 1), new Vector(5, 5), new Vector(1, 5)]
+const charge = [1, 1]
+const chargePosition = [new Vector(5, 4), new Vector(15, 4)]
 const chargeSize = 10 //px
+
+const arrowScale = 0.5
+const arrowLenghPx = (arrowScale * gridStepInMeters) * scale
 
 const scaleText = document.getElementById('scale')
 scaleText.innerText = 'Масштаб ' + gridStepInMeters + ' метр(ов) между точками'
 
 for (let y = 0; y < example.height / (scale * gridStepInMeters); y += gridStepInMeters) {
 	for (let x = 0; x < example.width / (scale * gridStepInMeters); x += gridStepInMeters) {
+
 		drawGridPoint(x, y, scale, example)
+
+		const epsilon = 1e-6
+		let IntensityVector = new Vector(0, 0)
+
+		for (let i = 0; i < charge.length; i++) {
+			IntensityVector = addVectors(
+				IntensityVector,
+				calculateElectrostaticFieldIntensityVector(
+					charge[i],
+					chargePosition[i],
+					new Vector(x, y)
+				)
+			)
+		}
+
+		if (calculateVectorLength(IntensityVector) > epsilon) {
+			const direction = multiplyVectorByNumber(normalizeVector(IntensityVector), arrowLenghPx)
+			drawArrow(
+				transformToScreen(
+					new Point(x * scale, y * scale),
+					example
+				),
+				transformToScreen(
+					new Point(x * scale + direction.x, y * scale + direction.y),
+					example
+				),
+				{
+					headArrowHeight: 10,
+					headArrowWidth: 10,
+					draw: (arrowVertexes) => drawArrowOnCanvasContext2D(arrowVertexes, ctx)
+				}
+			)
+		}
 	}
 }
 
