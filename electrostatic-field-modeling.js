@@ -19,27 +19,33 @@ scaleText.innerText = 'Масштаб ' + gridStepInMeters + ' метр(ов) м
 
 for (let y = 0; y < example.height / (scale * gridStepInMeters); y += gridStepInMeters) {
 	for (let x = 0; x < example.width / (scale * gridStepInMeters); x += gridStepInMeters) {
-		const point = transformToScreen(new Point(x * scale, y * scale), example)
-		ctx.fillRect(
-			point.x,
-			point.y,
-			1,1)
-
-		ctx.fillRect(
-			point.x + 1,
-			point.y,
-			1,1)
-		ctx.fillRect(
-			point.x - 1,
-			point.y,
-			1,1)
-		ctx.fillRect(
-			point.x,
-			point.y + 1,
-			1,1)
-		ctx.fillRect(
-			point.x,
-			point.y - 1,
-			1,1)
+		drawGridPoint(x, y, scale, example)
 	}
+}
+
+function drawGridPoint(x, y, scale, canvasElement) {
+
+	let ctx = canvasElement.getContext('2d')
+	const point = transformToScreen(new Point(x * scale, y * scale), canvasElement)
+	ctx.fillRect(
+		point.x,
+		point.y,
+		1,1)
+
+	ctx.fillRect(
+		point.x + 1,
+		point.y,
+		1,1)
+	ctx.fillRect(
+		point.x - 1,
+		point.y,
+		1,1)
+	ctx.fillRect(
+		point.x,
+		point.y + 1,
+		1,1)
+	ctx.fillRect(
+		point.x,
+		point.y - 1,
+		1,1)
 }
