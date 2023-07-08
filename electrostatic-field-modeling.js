@@ -17,9 +17,9 @@ const gridStepInMeters = 1
 const scaleText = document.getElementById('scale')
 scaleText.innerText = 'Масштаб ' + gridStepInMeters + ' метр(ов) между точками'
 
-for (let y = 0; y < example.height / (scale * gridStepInMeters); y++) {
-	for (let x = 0; x < example.width / (scale * gridStepInMeters); x++) {
-		const point = transformToScreen(new Point(x * scale * gridStepInMeters, y * scale * gridStepInMeters), example)
+for (let y = 0; y < example.height / (scale * gridStepInMeters); y += gridStepInMeters) {
+	for (let x = 0; x < example.width / (scale * gridStepInMeters); x += gridStepInMeters) {
+		const point = transformToScreen(new Point(x * scale, y * scale), example)
 		ctx.fillRect(
 			point.x,
 			point.y,
