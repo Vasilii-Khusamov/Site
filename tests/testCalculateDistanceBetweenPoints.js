@@ -1,6 +1,6 @@
 
-import { calculateDistanceBetweenPoints } from "../PointOperations/calculateDistanceBetweenPoints.js"
-import { Point } from "../Point.js"
+import { calculateDistanceBetweenPoints } from "../Math/PointOperations/calculateDistanceBetweenPoints.js"
+import { Point } from "../Math/Point.js"
 import {TestError} from './TestError.js';
 
 export function testCalculateDistanceBetweenPoints() {

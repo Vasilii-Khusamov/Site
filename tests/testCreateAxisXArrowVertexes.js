@@ -1,5 +1,5 @@
 import {createAxisXArrowVertexes} from '../Draw/createAxisXArrowVertexes.js';
-import {Point} from '../Point.js';
+import {Point} from '../Math/Point.js';
 import {TestError} from './TestError.js';
 
 export function testCreateAxisXArrowVertexes(){

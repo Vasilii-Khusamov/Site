@@ -1,5 +1,5 @@
 import {transformToScreen} from '../Draw/transformToScreen.js'
-import {Point} from '../Point.js'
+import {Point} from '../Math/Point.js'
 import {TestError} from './TestError.js'
 
 export function testTransformToScreen() {

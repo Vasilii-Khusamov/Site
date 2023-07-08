@@ -4,7 +4,7 @@ import {Vector} from '../Math/Vector.js';
 import {addVectors} from '../Math/VectorOperations/addVectors.js';
 import {calculateVectorAngle} from '../Math/VectorOperations/calculateVectorAngle.js';
 import {calculateVectorAngleByAxisX} from '../Math/VectorOperations/calculateVectorAngleByAxisX.js';
-import {Point} from '../Point.js';
+import {Point} from '../Math/Point.js';
 
 /**
  * @param {Point} point1
