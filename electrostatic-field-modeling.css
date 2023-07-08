@@ -4,6 +4,29 @@
     width: 100%;
 }
 
+#scale {
+    font-size: larger;
+    position: absolute;
+    margin: auto;
+    width: fit-content;
+    left: 0;
+    bottom: 20px;
+    right: 0;
+    padding: 3px;
+    box-shadow:
+            0.1px 0.2px 1.5px rgba(0, 0, 0, 0.017),
+            0.2px 0.5px 3.7px rgba(0, 0, 0, 0.025),
+            0.4px 1px 6.8px rgba(0, 0, 0, 0.029),
+            0.6px 1.8px 11.2px rgba(0, 0, 0, 0.031),
+            1px 2.7px 17.1px rgba(0, 0, 0, 0.031),
+            1.4px 4px 25.3px rgba(0, 0, 0, 0.032),
+            2.1px 5.9px 36.9px rgba(0, 0, 0, 0.032),
+            3px 8.5px 54px rgba(0, 0, 0, 0.034),
+            4.4px 12.5px 81.6px rgba(0, 0, 0, 0.038),
+            7px 20px 139px rgba(0, 0, 0, 0.06)
+;
+}
+
 #example canvas {
 /*    border: 0px dashed silver;*/
     height: 100%;
