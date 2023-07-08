@@ -1,5 +1,5 @@
-import {Vector} from '../Math/Vector.js';
-import {multiplyVectorByNumber} from '../Math/VectorOperations/multiplyVectorByNumber.js';
+import {Vector} from '../Library/Math/Vector.js';
+import {multiplyVectorByNumber} from '../Library/Math/VectorOperations/multiplyVectorByNumber.js';
 import {TestError} from './TestError.js';
 
 export function testMultiplyVectorByNumber(){

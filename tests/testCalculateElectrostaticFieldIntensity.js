@@ -1,4 +1,4 @@
-import {calculateElectrostaticFieldIntensity} from '../Physics/calculateElectrostaticFieldIntensity.js'
+import {calculateElectrostaticFieldIntensity} from '../Library/Physics/calculateElectrostaticFieldIntensity.js'
 
 export function testCalculateElectrostaticFieldIntensity() {
 	const distance = 10

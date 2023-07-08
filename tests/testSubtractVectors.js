@@ -1,5 +1,5 @@
-import {Vector} from '../Math/Vector.js';
-import {subtructVectors} from '../Math/VectorOperations/subtractVectors.js';
+import {Vector} from '../Library/Math/Vector.js';
+import {subtructVectors} from '../Library/Math/VectorOperations/subtractVectors.js';
 import {TestError} from './TestError.js';
 
 export function testSubtractVectors() {

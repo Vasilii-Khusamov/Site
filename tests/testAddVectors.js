@@ -1,4 +1,4 @@
-import { addVectors } from '../Math/VectorOperations/addVectors'
+import { addVectors } from '../Library/Math/VectorOperations/addVectors'
 import {TestError} from './TestError.js';
 
 export function testAddVectors() {

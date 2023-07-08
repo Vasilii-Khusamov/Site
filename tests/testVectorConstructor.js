@@ -1,4 +1,4 @@
-import { Vector } from '../Math/Vector.js'
+import { Vector } from '../Library/Math/Vector.js'
 import {TestError} from './TestError.js';
 
 export function testVectorConstructor() {

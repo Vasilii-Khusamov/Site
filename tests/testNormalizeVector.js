@@ -1,5 +1,5 @@
-import {Vector} from '../Math/Vector.js';
-import {normalizeVector} from '../Math/VectorOperations/normalizeVector.js';
+import {Vector} from '../Library/Math/Vector.js';
+import {normalizeVector} from '../Library/Math/VectorOperations/normalizeVector.js';
 import {TestError} from './TestError.js';
 
 export function testNormalizeVector(){

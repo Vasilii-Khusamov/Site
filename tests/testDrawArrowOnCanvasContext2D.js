@@ -1,5 +1,5 @@
-import {drawArrowOnCanvasContext2D} from '../Draw/drawArrowOnCanvasContext2D.js';
-import {Vector} from '../Math/Vector.js';
+import {drawArrowOnCanvasContext2D} from '../Library/Draw/drawArrowOnCanvasContext2D.js';
+import {Vector} from '../Library/Math/Vector.js';
 import {TestError} from './TestError.js';
 
 const expectedArray = [

@@ -1,5 +1,5 @@
-import {Vector} from '../Math/Vector.js';
-import {calculateVectorLength} from '../Math/VectorOperations/calculateVectorLength.js';
+import {Vector} from '../Library/Math/Vector.js';
+import {calculateVectorLength} from '../Library/Math/VectorOperations/calculateVectorLength.js';
 import {TestError} from './TestError.js';
 
 export function testCalculateVectorLength(){

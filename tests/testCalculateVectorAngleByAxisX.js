@@ -1,5 +1,5 @@
-import {calculateVectorAngleByAxisX} from '../Math/VectorOperations/calculateVectorAngleByAxisX.js';
-import {Vector} from '../Math/Vector.js';
+import {calculateVectorAngleByAxisX} from '../Library/Math/VectorOperations/calculateVectorAngleByAxisX.js';
+import {Vector} from '../Library/Math/Vector.js';
 import {TestError} from './TestError.js';
 
 export function testCalculateVectorAngleByAxisX(){

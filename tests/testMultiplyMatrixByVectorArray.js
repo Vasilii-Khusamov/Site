@@ -1,5 +1,5 @@
-import {multiplyMatrixByVectorArray} from '../Math/MatrixOperations/multiplyMatrixByVectorArray.js';
-import {Vector} from '../Math/Vector.js';
+import {multiplyMatrixByVectorArray} from '../Library/Math/MatrixOperations/multiplyMatrixByVectorArray.js';
+import {Vector} from '../Library/Math/Vector.js';
 import {TestError} from './TestError.js';
 
 export function testMultiplyMatrixByVectorArray(){
