@@ -2,6 +2,7 @@ import {drawArrow} from './Draw/drawArrow.js'
 import {drawArrowOnCanvasContext2D} from './Draw/drawArrowOnCanvasContext2D.js'
 import {transformToScreen} from './Draw/transformToScreen.js'
 import {Point} from './Math/Point.js'
+import {Vector} from './Math/Vector.js'
 
 // ctx.fillRect(x,y,1,1) // fill in the pixel at x, y
 
@@ -13,6 +14,10 @@ ctx.canvas.height = window.innerHeight;
 
 const scale = 100
 const gridStepInMeters = 1
+
+const charge = [2, -1, 5]
+const chargePosition = [new Vector(1, 1), new Vector(5, 5), new Vector(1, 5)]
+const chargeSize = 10 //px
 
 const scaleText = document.getElementById('scale')
 scaleText.innerText = 'Масштаб ' + gridStepInMeters + ' метр(ов) между точками'
