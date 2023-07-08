@@ -28,6 +28,18 @@ for (let y = 0; y < example.height / (scale * gridStepInMeters); y += gridStepIn
 	}
 }
 
+for (let i = 0; i < charge.length; i++) {
+	if (charge[i] > 0) {
+		ctx.fillStyle = 'red'
+		ctx.strokeStyle = 'darkred'
+		drawCircle(chargePosition[i].x, chargePosition[i].y, chargeSize, scale, example)
+	} else {
+		ctx.fillStyle = 'blue'
+		ctx.strokeStyle = 'darkblue'
+		drawCircle(chargePosition[i].x, chargePosition[i].y, chargeSize, scale, example)
+	}
+}
+
 function drawGridPoint(x, y, scale, canvasElement) {
 
 	let ctx = canvasElement.getContext('2d')
@@ -53,4 +65,13 @@ function drawGridPoint(x, y, scale, canvasElement) {
 		point.x,
 		point.y - 1,
 		1,1)
+}
+
+function drawCircle(x, y, radius, scale, canvasElement) {
+	const ctx = canvasElement.getContext('2d')
+	const point = transformToScreen(new Point(x * scale, y * scale), canvasElement)
+	ctx.beginPath()
+	ctx.arc(point.x, point.y, radius, 0, 2 * Math.PI, false)
+	ctx.fill()
+	ctx.stroke()
 }
