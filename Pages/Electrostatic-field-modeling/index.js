@@ -4,119 +4,235 @@ import {transformToScreen} from '../../Library/Draw/transformToScreen.js'
 import {Point} from '../../Library/Math/Point.js'
 import {Vector} from '../../Library/Math/Vector.js'
 import {addVectors} from '../../Library/Math/VectorOperations/addVectors.js'
-import {calculateVectorAngleByAxisX} from '../../Library/Math/VectorOperations/calculateVectorAngleByAxisX.js'
 import {calculateVectorLength} from '../../Library/Math/VectorOperations/calculateVectorLength.js'
 import {multiplyVectorByNumber} from '../../Library/Math/VectorOperations/multiplyVectorByNumber.js'
 import {normalizeVector} from '../../Library/Math/VectorOperations/normalizeVector.js'
 import {
 	calculateElectrostaticFieldIntensityVector
 } from '../../Library/Physics/calculateElectrostaticFieldIntensityVector.js'
+import {drawCircle} from './drawCircle.js'
+import {drawGridPoint} from './drawGridPoint.js'
+import {calculateDistanceBetweenPoints} from '../../Library/Math/PointOperations/calculateDistanceBetweenPoints.js'
+function map(x, in_min, in_max, out_min, out_max)  {
+	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
-// ctx.fillRect(x,y,1,1) // fill in the pixel at x, y
 
-var example = document.querySelector('#example canvas')
-let ctx = example.getContext('2d')
+// const electricChargeArray = [{}]
+// const constants = {}
+// const intensityVectorArray = calculateIntensityVectorArray(electricChargeArray, constants)
+// drawIntensityVectorArray(intensityVectorArray, document, window)
+// drawElectricChargeArray(electricChargeArray)
+
+
+
+
+
+// Входные параметры.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// document
+// window
+
+
+/**
+ * Массив зарядов.
+ * @type {[{positionInMeters: Vector, value: number},{positionInMeters: Vector, value: number}]}
+ */
+const electricChargeArray = [
+	{
+		value: 1,
+		positionInMeters: new Vector(5, 5)
+	},
+	{
+		value: 1,
+		positionInMeters: new Vector(6, 6)
+	}
+]
+
+
+
+
+// Константы.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+const gridStepInMeters = 0.5
+
+const epsilon = 1e-6
+
+const cameraHeight = 10
+
+// Длина стрелки в пикселях.
+// const arrowLengthPx = (gridStepInMeters / 2) * scale
+const arrowLengthPx = 15
+
+const electricChargeSize = 10
+
+
+
+// Подготовка к вычислениям.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+const example = document.querySelector('#example canvas')
+const ctx = example.getContext('2d')
 
 ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 
-const scale = 100
-const gridStepInMeters = .5
+const ratio = example.width / example.height
+const cameraWidth = cameraHeight * ratio
 
-const charge = [1, 1]
-const chargePosition = [new Vector(5, 4), new Vector(15, 4)]
-const chargeSize = 10 //px
+// Конвертация координат в метрах в координаты в пикселах экрана.
+const convertToScreen = example.height / cameraHeight
 
-const arrowScale = 0.5
-const arrowLenghPx = (arrowScale * gridStepInMeters) * scale
 
-const scaleText = document.getElementById('scale')
-scaleText.innerText = 'Масштаб ' + gridStepInMeters + ' метр(ов) между точками'
 
-for (let y = 0; y < example.height / (scale * gridStepInMeters); y += gridStepInMeters) {
-	for (let x = 0; x < example.width / (scale * gridStepInMeters); x += gridStepInMeters) {
 
-		drawGridPoint(x, y, scale, example)
+// Основные вычисления.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-		const epsilon = 1e-6
-		let IntensityVector = new Vector(0, 0)
 
-		for (let i = 0; i < charge.length; i++) {
-			IntensityVector = addVectors(
-				IntensityVector,
-				calculateElectrostaticFieldIntensityVector(
-					charge[i],
-					chargePosition[i],
-					new Vector(x, y)
-				)
-			)
-		}
 
-		if (calculateVectorLength(IntensityVector) > epsilon) {
-			const direction = multiplyVectorByNumber(normalizeVector(IntensityVector), arrowLenghPx)
-			drawArrow(
-				transformToScreen(
-					new Point(x * scale, y * scale),
-					example
-				),
-				transformToScreen(
-					new Point(x * scale + direction.x, y * scale + direction.y),
-					example
-				),
-				{
-					headArrowHeight: 10,
-					headArrowWidth: 10,
-					draw: (arrowVertexes) => drawArrowOnCanvasContext2D(arrowVertexes, ctx)
-				}
-			)
+// Вычисляем массив точек, в которых надо рассчитать напряженность поля.
+const testPoints = []
+for (let y = 0; y < cameraHeight; y += gridStepInMeters) {
+	for (let x = 0; x < cameraWidth; x += gridStepInMeters) {
+		const point = new Point(x, y)
+		const dist = calculateDistanceBetweenPoints
+		// Если точка не совпала ни с одним из зарядом, то помещаем ее в массив gridPoints.
+		if (electricChargeArray.reduce((result, charge) => result && dist(charge.positionInMeters, point) > epsilon, true)) {
+			testPoints.push(point)
 		}
 	}
 }
 
-for (let i = 0; i < charge.length; i++) {
-	if (charge[i] > 0) {
+
+/**
+ * Массив векторной напряжёности в каждой точке сетки.
+ * @type {{intensityVector: Vector, position: Vector}[]}
+ */
+const intensityVectorArray = []
+// Вычисление векторной напряжёности в каждой точке сетки.
+for (const {x, y} of testPoints) {
+	let intensityVector = new Vector(0, 0)
+
+	for (let i = 0; i < electricChargeArray.length; i++) {
+		intensityVector = addVectors(
+			intensityVector,
+			calculateElectrostaticFieldIntensityVector(
+				electricChargeArray[i].value,
+				electricChargeArray[i].positionInMeters,
+				new Vector(x, y)
+			)
+		)
+	}
+
+	intensityVectorArray.push({intensityVector: intensityVector, position: new Vector(x, y)})
+}
+
+
+
+
+// Отрисовка результов на экране.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+// Отрисовка сетки с тестовыми точками.
+for (let y = 0; y < cameraHeight; y += gridStepInMeters) {
+	for (let x = 0; x < cameraWidth; x += gridStepInMeters) {
+		ctx.beginPath()
+		ctx.fillStyle = `hsl(268, 100%, 90%)`
+		drawGridPoint(x, y, convertToScreen, example)
+	}
+}
+
+/**
+ *	 Рисование стрелок на основе данных из intensityVectorArray
+ */
+const minValueIntensity = Math.min(...intensityVectorArray.map(item => calculateVectorLength(item.intensityVector)))
+const maxValueIntensity = Math.max(...intensityVectorArray.map(item => calculateVectorLength(item.intensityVector)))
+for (let i = 0; i < intensityVectorArray.length; i++) {
+	const intensity = calculateVectorLength(intensityVectorArray[i].intensityVector)
+	if (intensity > epsilon) {
+
+		ctx.beginPath()
+
+		const direction = multiplyVectorByNumber(
+			normalizeVector(intensityVectorArray[i].intensityVector),
+			arrowLengthPx
+		)
+
+		let color = 0
+		// const middleValueIntensity = (maxValueIntensity + minValueIntensity) / 2
+		// if (intensity < middleValueIntensity) {
+		// 	color = Math.round(map(intensity, minValueIntensity, middleValueIntensity, 255, 0))
+		// }
+
+		color = Math.round(map(intensity, minValueIntensity, maxValueIntensity, 255, 0))
+
+		ctx.strokeStyle = `rgb(${color}, ${color}, ${color})`
+		//ctx.strokeStyle = `hsl(${color}, 100%, 50%)`
+		// console.log(color, Math.round(intensity), Math.round(minValueIntensity), Math.round(middleValueIntensity), Math.round(maxValueIntensity), intensityVectorArray[i].position)
+
+		drawArrow(
+			transformToScreen(
+				new Point(
+					intensityVectorArray[i].position.x * convertToScreen,
+					intensityVectorArray[i].position.y * convertToScreen
+				),
+				example
+			),
+			transformToScreen(
+				new Point(
+					intensityVectorArray[i].position.x * convertToScreen + direction.x,
+					intensityVectorArray[i].position.y * convertToScreen + direction.y
+				),
+				example
+			),
+			{
+				headArrowWidth: 10,
+				headArrowHeight: 10,
+				draw: (arrowVertexes) => drawArrowOnCanvasContext2D(arrowVertexes, ctx)
+			}
+		)
+	}
+}
+
+/**
+ * Рисование всех зарядов
+ */
+for (let i = 0; i < electricChargeArray.length; i++) {
+	if (electricChargeArray[i].value > 0) {
 		ctx.fillStyle = 'red'
 		ctx.strokeStyle = 'darkred'
-		drawCircle(chargePosition[i].x, chargePosition[i].y, chargeSize, scale, example)
+
+		drawCircle(
+			electricChargeArray[i].positionInMeters.x,
+			electricChargeArray[i].positionInMeters.y,
+			electricChargeSize,
+			convertToScreen,
+			example
+		)
 	} else {
 		ctx.fillStyle = 'blue'
 		ctx.strokeStyle = 'darkblue'
-		drawCircle(chargePosition[i].x, chargePosition[i].y, chargeSize, scale, example)
+
+		drawCircle(
+			electricChargeArray[i].positionInMeters.x,
+			electricChargeArray[i].positionInMeters.y,
+			electricChargeSize,
+			convertToScreen,
+			example
+		)
 	}
 }
 
-function drawGridPoint(x, y, scale, canvasElement) {
 
-	let ctx = canvasElement.getContext('2d')
-	const point = transformToScreen(new Point(x * scale, y * scale), canvasElement)
-	ctx.fillRect(
-		point.x,
-		point.y,
-		1,1)
-
-	ctx.fillRect(
-		point.x + 1,
-		point.y,
-		1,1)
-	ctx.fillRect(
-		point.x - 1,
-		point.y,
-		1,1)
-	ctx.fillRect(
-		point.x,
-		point.y + 1,
-		1,1)
-	ctx.fillRect(
-		point.x,
-		point.y - 1,
-		1,1)
-}
-
-function drawCircle(x, y, radius, scale, canvasElement) {
-	const ctx = canvasElement.getContext('2d')
-	const point = transformToScreen(new Point(x * scale, y * scale), canvasElement)
-	ctx.beginPath()
-	ctx.arc(point.x, point.y, radius, 0, 2 * Math.PI, false)
-	ctx.fill()
-	ctx.stroke()
-}
+/**
+ * Элемент текста который показывает масштаб сетки.
+ * @type {HTMLElement}
+ */
+const scaleTextElement = document.getElementById('scale')
+scaleTextElement.innerText = 'Масштаб ' + gridStepInMeters + ' метр(ов) между точками'

@@ -1,9 +1,28 @@
-﻿#example {
+﻿
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#example {
     font-size: 0;
     height: 100%;
     width: 100%;
 }
-
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+#example canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 #scale {
     font-size: larger;
     position: absolute;
@@ -26,26 +45,4 @@
             7px 20px 139px rgba(0, 0, 0, 0.06)
 ;
     background-color: white;
-}
-
-#example canvas {
-/*    border: 0px dashed silver;*/
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
 }
