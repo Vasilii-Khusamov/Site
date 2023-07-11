@@ -16,7 +16,7 @@ const electricChargeArray = [
 	},
 	{
 		value: 1,
-		positionInMeters: new Vector(6, 6)
+		positionInMeters: new Vector(8, 5)
 	}
 ]
 

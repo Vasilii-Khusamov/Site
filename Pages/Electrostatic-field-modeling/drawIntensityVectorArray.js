@@ -5,8 +5,9 @@ import {Point} from '../../Library/Math/Point.js'
 import {calculateVectorLength} from '../../Library/Math/VectorOperations/calculateVectorLength.js'
 import {multiplyVectorByNumber} from '../../Library/Math/VectorOperations/multiplyVectorByNumber.js'
 import {normalizeVector} from '../../Library/Math/VectorOperations/normalizeVector.js'
+import {calculateElectrostaticFieldIntensity} from '../../Library/Physics/calculateElectrostaticFieldIntensity.js'
 import {drawGridPoint} from './drawGridPoint.js'
-import {cameraHeight, gridStepInMeters, arrowLengthPx, epsilon} from './Consts.js'
+import {cameraHeight, gridStepInMeters, arrowLengthPx, epsilon, electrostaticDrawDistance} from './Consts.js'
 import {map} from './map.js'
 
 export function drawIntensityVectorArray(intensityVectorArray, canvasElement, ctx) {
@@ -21,7 +22,7 @@ export function drawIntensityVectorArray(intensityVectorArray, canvasElement, ct
 	for (let y = 0; y < cameraHeight; y += gridStepInMeters) {
 		for (let x = 0; x < cameraWidth; x += gridStepInMeters) {
 			ctx.beginPath()
-			ctx.fillStyle = `hsl(268, 100%, 90%)`
+			ctx.fillStyle = `hsl(0, 0%, 85%)`
 			drawGridPoint(x, y, convertToScreen, canvasElement)
 		}
 	}
@@ -29,8 +30,9 @@ export function drawIntensityVectorArray(intensityVectorArray, canvasElement, ct
 	/**
 	 *	 Рисование стрелок на основе данных из intensityVectorArray
 	 */
-	const minValueIntensity = Math.min(...intensityVectorArray.map(item => calculateVectorLength(item.intensityVector)))
-	const maxValueIntensity = Math.max(...intensityVectorArray.map(item => calculateVectorLength(item.intensityVector)))
+	const minValueIntensity = calculateElectrostaticFieldIntensity(electrostaticDrawDistance, 1)
+	const maxValueIntensity = calculateElectrostaticFieldIntensity(1, 1)
+
 	for (let i = 0; i < intensityVectorArray.length; i++) {
 		const intensity = calculateVectorLength(intensityVectorArray[i].intensityVector)
 
