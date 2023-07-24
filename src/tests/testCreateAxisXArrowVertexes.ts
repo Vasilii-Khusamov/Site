@@ -1,4 +1,4 @@
-import {createAxisXArrowVertexes} from '../Library/Draw/createAxisXArrowVertexes.js';
+import {createAxisXArrowVertexes} from '../Library/Draw/createAxisXArrowVertexes.ts';
 import {Point} from '../Library/Math/Point.js';
 import {TestError} from './TestError.js';
 

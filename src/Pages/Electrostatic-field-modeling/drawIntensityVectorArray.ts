@@ -1,4 +1,4 @@
-import {drawArrow} from '../../Library/Draw/drawArrow.js'
+import {drawArrow} from '../../Library/Draw/drawArrow.ts'
 import {drawArrowOnCanvasContext2D} from '../../Library/Draw/drawArrowOnCanvasContext2D.js'
 import {transformToScreen} from '../../Library/Draw/transformToScreen.js'
 import {Point} from '../../Library/Math/Point.js'
