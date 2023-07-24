@@ -4,6 +4,11 @@
   "description": "",
   "main": "src/index.html",
   "scripts": {
+    "build": "npm run compile && npm run copy-html-to-docs && npm run copy-css-to-docs && npm run change-extensions",
+    "compile": "tsc",
+    "copy-html-to-docs": "xcopy src\\*.html docs /fye",
+    "copy-css-to-docs": "xcopy src\\*.css docs /fye",
+    "change-extensions": "node scripts/change-extensions docs",
     "serve": "npx http-server --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
