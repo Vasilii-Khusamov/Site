@@ -10,12 +10,13 @@
     "copy-css-to-docs": "xcopy src\\*.css docs /fye",
     "copy-favicon-to-docs": "xcopy src\\*.ico docs /fye",
     "change-extensions": "node scripts/change-extensions docs",
-    "serve": "npx http-server --port 3000",
+    "serve": "cd docs && http-server --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vasilii",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "typescript": "^5.1.6"
   }
 }
