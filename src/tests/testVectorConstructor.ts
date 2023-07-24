@@ -1,5 +1,5 @@
-import { Vector } from '../Library/Math/Vector.js'
-import {TestError} from './TestError.js';
+import {Vector} from '../Library/Math/Vector'
+import {TestError} from './TestError'
 
 export function testVectorConstructor() {
     const vector = new Vector(1, 2)

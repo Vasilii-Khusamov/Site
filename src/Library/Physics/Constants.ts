@@ -1,5 +1,3 @@
-import {calculateElectrostaticFieldIntensity} from './calculateElectrostaticFieldIntensity.js'
-
 /**
  * Коеффициент для вычисления напряженности электростатического поля в точке около заряда.
  * Еденица измерения: Н * М^2 / Кл^2

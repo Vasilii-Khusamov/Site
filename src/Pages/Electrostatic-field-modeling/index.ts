@@ -1,8 +1,8 @@
-import {Vector} from '../../Library/Math/Vector.js'
-import {calculateIntensityVectorArray} from './calculateIntensityVectorArray.js'
-import {gridStepInMeters} from './Consts.js'
-import {drawElectricChargeArray} from './drawElectricChargeArray.js'
-import {drawIntensityVectorArray} from './drawIntensityVectorArray.js'
+import {Vector} from '../../Library/Math/Vector'
+import {calculateIntensityVectorArray} from './calculateIntensityVectorArray'
+import {gridStepInMeters} from './Consts'
+import {drawElectricChargeArray} from './drawElectricChargeArray'
+import {drawIntensityVectorArray} from './drawIntensityVectorArray'
 
 // Входные параметры.
 /**
@@ -30,6 +30,9 @@ const intensityVectorArray = calculateIntensityVectorArray(electricChargeArray)
  * @type {Element}
  */
 const canvasElement = document.querySelector('#example canvas')
+if (!(canvasElement instanceof HTMLCanvasElement)) {
+	throw new Error('Ожидался HTMLCanvasElement')
+}
 const ctx = canvasElement.getContext('2d')
 
 drawIntensityVectorArray(intensityVectorArray, canvasElement, ctx)

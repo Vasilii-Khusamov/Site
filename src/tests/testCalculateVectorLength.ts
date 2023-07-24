@@ -1,6 +1,6 @@
-import {Vector} from '../Library/Math/Vector.js';
-import {calculateVectorLength} from '../Library/Math/VectorOperations/calculateVectorLength.js';
-import {TestError} from './TestError.js';
+import {Vector} from '../Library/Math/Vector'
+import {calculateVectorLength} from '../Library/Math/VectorOperations/calculateVectorLength'
+import {TestError} from './TestError'
 
 export function testCalculateVectorLength(){
 	const resultDistance = calculateVectorLength(new Vector(1, 2))

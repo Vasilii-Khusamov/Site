@@ -1,4 +1,4 @@
-import {Vector} from '../Vector.js';
+import {Vector} from '../Vector'
 
 export function multiplyMatrixByVector(matrix, vector){
 	return new Vector(

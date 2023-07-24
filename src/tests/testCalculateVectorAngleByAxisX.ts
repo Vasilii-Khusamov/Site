@@ -1,6 +1,6 @@
-import {calculateVectorAngleByAxisX} from '../Library/Math/VectorOperations/calculateVectorAngleByAxisX.js';
-import {Vector} from '../Library/Math/Vector.js';
-import {TestError} from './TestError.js';
+import {calculateVectorAngleByAxisX} from '../Library/Math/VectorOperations/calculateVectorAngleByAxisX'
+import {Vector} from '../Library/Math/Vector'
+import {TestError} from './TestError'
 
 export function testCalculateVectorAngleByAxisX(){
 	const resultAngle = calculateVectorAngleByAxisX(new Vector(1, 0))

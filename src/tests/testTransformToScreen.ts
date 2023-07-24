@@ -1,6 +1,6 @@
-import {transformToScreen} from '../Library/Draw/transformToScreen.js'
-import {Point} from '../Library/Math/Point.js'
-import {TestError} from './TestError.js'
+import {transformToScreen} from '../Library/Draw/transformToScreen'
+import {Point} from '../Library/Math/Point'
+import {TestError} from './TestError'
 
 export function testTransformToScreen() {
 	const canvasStub = {height:  100}

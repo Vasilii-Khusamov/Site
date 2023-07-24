@@ -1,5 +1,5 @@
-import { Point } from '../Library/Math/Point.js'
-import {TestError} from './TestError.js';
+import {Point} from '../Library/Math/Point'
+import {TestError} from './TestError'
 
 export function testPointConstructor() {
     const point = new Point(1, 2)

@@ -1,6 +1,6 @@
-import {drawArrowOnCanvasContext2D} from '../Library/Draw/drawArrowOnCanvasContext2D.js';
-import {Vector} from '../Library/Math/Vector.js';
-import {TestError} from './TestError.js';
+import {drawArrowOnCanvasContext2D} from '../Library/Draw/drawArrowOnCanvasContext2D'
+import {Vector} from '../Library/Math/Vector'
+import {TestError} from './TestError'
 
 const expectedArray = [
 	0, 0, 0, 255, 0, 0, 0, 75, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

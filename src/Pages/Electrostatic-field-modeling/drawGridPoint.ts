@@ -1,5 +1,5 @@
-import {transformToScreen} from '../../Library/Draw/transformToScreen.js'
-import {Point} from '../../Library/Math/Point.js'
+import {transformToScreen} from '../../Library/Draw/transformToScreen'
+import {Point} from '../../Library/Math/Point'
 
 export function drawGridPoint(x, y, scale, canvasElement) {
 

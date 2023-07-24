@@ -1,4 +1,4 @@
-import {multiplyMatrixByVector} from './multiplyMatrixByVector.js';
+import {multiplyMatrixByVector} from './multiplyMatrixByVector'
 
 export function multiplyMatrixByVectorArray(matrix, vectorArray) {
 	const result = []

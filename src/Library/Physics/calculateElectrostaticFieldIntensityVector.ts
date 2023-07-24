@@ -1,17 +1,16 @@
-import {multiplyMatrixByVectorArray} from '../Math/MatrixOperations/multiplyMatrixByVectorArray.js'
-import {calculateVectorLength} from '../Math/VectorOperations/calculateVectorLength.js'
-import {multiplyVectorByNumber} from '../Math/VectorOperations/multiplyVectorByNumber.js'
-import {normalizeVector} from '../Math/VectorOperations/normalizeVector.js'
-import {subtructVectors} from '../Math/VectorOperations/subtractVectors.js'
-import {calculateElectrostaticFieldIntensity} from './calculateElectrostaticFieldIntensity.js'
+import {calculateVectorLength} from '../Math/VectorOperations/calculateVectorLength'
+import {multiplyVectorByNumber} from '../Math/VectorOperations/multiplyVectorByNumber'
+import {normalizeVector} from '../Math/VectorOperations/normalizeVector'
+import {subtructVectors} from '../Math/VectorOperations/subtractVectors'
+import {calculateElectrostaticFieldIntensity} from './calculateElectrostaticFieldIntensity'
 
 /**
  * Формула вычисления напряженности электростатического поля в точке около заряда в векторной форме.
  * Формула потроена на основе закона Кулона и опредиления напряженности.
  * @param {number} electricCharge
- * @param {import('../Math/Vector.js')} electricChargePosition
- * @param {import('../Math/Vector.js')} testPointPosition
- * @returns {import('../Math/Vector.js')}
+ * @param {import('../Math/Vector')} electricChargePosition
+ * @param {import('../Math/Vector')} testPointPosition
+ * @returns {import('../Math/Vector')}
  */
 export function calculateElectrostaticFieldIntensityVector(electricCharge, electricChargePosition, testPointPosition) {
 	const distance = calculateVectorLength(

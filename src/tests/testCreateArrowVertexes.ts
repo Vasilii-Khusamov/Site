@@ -1,8 +1,7 @@
-import {createArrowVertexes} from '../Library/Draw/createArrowVertexes.ts'
-import {createAxisXArrowVertexes} from '../Library/Draw/createAxisXArrowVertexes.ts';
-import {Vector} from '../Library/Math/Vector.js'
-import {Point} from '../Library/Math/Point.js';
-import {TestError} from './TestError.js';
+import {createArrowVertexes} from '../Library/Draw/createArrowVertexes'
+import {Vector} from '../Library/Math/Vector'
+import {Point} from '../Library/Math/Point'
+import {TestError} from './TestError'
 
 export function testCreateArrowVertexes(){
 

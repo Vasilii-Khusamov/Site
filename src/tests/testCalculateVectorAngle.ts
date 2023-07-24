@@ -1,6 +1,6 @@
-import {calculateVectorAngle} from '../Library/Math/VectorOperations/calculateVectorAngle.js';
-import {Vector} from '../Library/Math/Vector.js';
-import {TestError} from './TestError.js';
+import {calculateVectorAngle} from '../Library/Math/VectorOperations/calculateVectorAngle'
+import {Vector} from '../Library/Math/Vector'
+import {TestError} from './TestError'
 
 export function testCalculateVectorAngle(){
 	const resultAngle = calculateVectorAngle(new Vector(0, 1), new Vector(1, 0))

@@ -1,5 +1,5 @@
-import {transformToScreen} from '../../Library/Draw/transformToScreen.js'
-import {Point} from '../../Library/Math/Point.js'
+import {transformToScreen} from '../../Library/Draw/transformToScreen'
+import {Point} from '../../Library/Math/Point'
 
 export function drawCircle(x, y, radius, scale, canvasElement) {
 	const ctx = canvasElement.getContext('2d')

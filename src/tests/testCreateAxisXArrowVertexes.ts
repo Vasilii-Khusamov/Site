@@ -1,6 +1,6 @@
-import {createAxisXArrowVertexes} from '../Library/Draw/createAxisXArrowVertexes.ts';
-import {Point} from '../Library/Math/Point.js';
-import {TestError} from './TestError.js';
+import {createAxisXArrowVertexes} from '../Library/Draw/createAxisXArrowVertexes'
+import {Point} from '../Library/Math/Point'
+import {TestError} from './TestError'
 
 export function testCreateAxisXArrowVertexes(){
 	const expectedArrowVertexes = [

@@ -1,5 +1,5 @@
-import {drawCircle} from './drawCircle.js'
-import {cameraHeight, electricChargeSize} from './Consts.js'
+import {drawCircle} from './drawCircle'
+import {cameraHeight, electricChargeSize} from './Consts'
 
 export function drawElectricChargeArray(electricChargeArray, canvasElement, ctx) {
 

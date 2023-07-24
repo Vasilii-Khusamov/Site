@@ -1,5 +1,6 @@
-import { addVectors } from '../Library/Math/VectorOperations/addVectors.js'
-import {TestError} from './TestError.js';
+import {addVectors} from '../Library/Math/VectorOperations/addVectors'
+import {TestError} from './TestError'
+import {Vector} from '../Library/Math/Vector'
 
 export function testAddVectors() {
     const vectorSum = addVectors(new Vector(1, 2), new Vector(3, 4))

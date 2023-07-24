@@ -1,10 +1,8 @@
-import {createRotationMatrix} from '../Math/MatrixOperations/createRotationMatrix.js';
-import {multiplyMatrixByVectorArray} from '../Math/MatrixOperations/multiplyMatrixByVectorArray.js';
-import {Vector} from '../Math/Vector.js';
-import {addVectors} from '../Math/VectorOperations/addVectors.js';
-import {calculateVectorAngle} from '../Math/VectorOperations/calculateVectorAngle.js';
-import {calculateVectorAngleByAxisX} from '../Math/VectorOperations/calculateVectorAngleByAxisX.js';
-import {Point} from '../Math/Point.js';
+import {createRotationMatrix} from '../Math/MatrixOperations/createRotationMatrix'
+import {multiplyMatrixByVectorArray} from '../Math/MatrixOperations/multiplyMatrixByVectorArray'
+import {Vector} from '../Math/Vector'
+import {calculateVectorAngleByAxisX} from '../Math/VectorOperations/calculateVectorAngleByAxisX'
+import {Point} from '../Math/Point'
 
 /**
  * @param {Point} point1

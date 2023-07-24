@@ -1,15 +1,18 @@
-import {Point} from '../../Library/Math/Point.js'
-import {calculateDistanceBetweenPoints} from '../../Library/Math/PointOperations/calculateDistanceBetweenPoints.js'
-import {Vector} from '../../Library/Math/Vector.js'
-import {addVectors} from '../../Library/Math/VectorOperations/addVectors.js'
+import {Point} from '../../Library/Math/Point'
+import {calculateDistanceBetweenPoints} from '../../Library/Math/PointOperations/calculateDistanceBetweenPoints'
+import {Vector} from '../../Library/Math/Vector'
+import {addVectors} from '../../Library/Math/VectorOperations/addVectors'
 import {
-	calculateElectrostaticFieldIntensityVector
-} from '../../Library/Physics/calculateElectrostaticFieldIntensityVector.js'
-import {epsilon, gridStepInMeters, cameraHeight} from './Consts.js'
+    calculateElectrostaticFieldIntensityVector
+} from '../../Library/Physics/calculateElectrostaticFieldIntensityVector'
+import {cameraHeight, epsilon, gridStepInMeters} from './Consts'
 
 export function calculateIntensityVectorArray(electricChargeArray) {
 
 	const example = document.querySelector('#example canvas')
+	if (!(example instanceof HTMLCanvasElement)) {
+		throw new Error('Ожидался HTMLCanvasElement')
+	}
 	const ctx = example.getContext('2d')
 
 	ctx.canvas.width  = window.innerWidth;

@@ -1,4 +1,6 @@
 export class Vector {
+    private _x: number
+    private _y: number
     constructor(x, y) {
         this._x = x
         this._y = y

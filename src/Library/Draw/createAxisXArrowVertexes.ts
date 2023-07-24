@@ -1,6 +1,6 @@
-import {Vector} from '../Math/Vector.js';
-import {Point} from '../Math/Point.js';
-import {calculateDistanceBetweenPoints} from '../Math/PointOperations/calculateDistanceBetweenPoints.js';
+import {Vector} from '../Math/Vector'
+import {Point} from '../Math/Point'
+import {calculateDistanceBetweenPoints} from '../Math/PointOperations/calculateDistanceBetweenPoints'
 
 /**
  * Высота головы стрелки по умолчанию.

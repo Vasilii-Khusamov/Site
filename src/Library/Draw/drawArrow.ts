@@ -1,5 +1,5 @@
-import {createArrowVertexes} from './createArrowVertexes.ts'
-import {createAxisXArrowVertexes} from './createAxisXArrowVertexes.ts'
+import {createArrowVertexes} from './createArrowVertexes'
+import {createAxisXArrowVertexes} from './createAxisXArrowVertexes'
 
 /**
  * Высота головы стрелки по умолчанию.

@@ -1,6 +1,6 @@
-import {multiplyMatrixByVector} from '../Library/Math/MatrixOperations/multiplyMatrixByVector.js';
-import {Vector} from '../Library/Math/Vector.js';
-import {TestError} from './TestError.js';
+import {multiplyMatrixByVector} from '../Library/Math/MatrixOperations/multiplyMatrixByVector'
+import {Vector} from '../Library/Math/Vector'
+import {TestError} from './TestError'
 
 export function testMultiplyMatrixByVector(){
 	const matrix = [

@@ -1,6 +1,6 @@
-import {Vector} from '../Library/Math/Vector.js';
-import {normalizeVector} from '../Library/Math/VectorOperations/normalizeVector.js';
-import {TestError} from './TestError.js';
+import {Vector} from '../Library/Math/Vector'
+import {normalizeVector} from '../Library/Math/VectorOperations/normalizeVector'
+import {TestError} from './TestError'
 
 export function testNormalizeVector(){
 	const resultVector = normalizeVector(new Vector(1, 2))

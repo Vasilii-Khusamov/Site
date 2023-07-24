@@ -1,7 +1,7 @@
-import {drawArrow} from '../Library/Draw/drawArrow.ts'
-import {drawArrowOnCanvasContext2D} from '../Library/Draw/drawArrowOnCanvasContext2D.js'
-import {Point} from '../Library/Math/Point.js'
-import {TestError} from './TestError.js'
+import {drawArrow} from '../Library/Draw/drawArrow'
+import {drawArrowOnCanvasContext2D} from '../Library/Draw/drawArrowOnCanvasContext2D'
+import {Point} from '../Library/Math/Point'
+import {TestError} from './TestError'
 
 const expectedImageData = Uint8ClampedArray.from([
 	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

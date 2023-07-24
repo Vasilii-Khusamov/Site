@@ -1,4 +1,4 @@
-import {electrostaticFieldIntensityRatio} from './Constants.js'
+import {electrostaticFieldIntensityRatio} from './Constants'
 
 /**
  * Формула вычисления напряженности электростатического поля в точке около заряда.

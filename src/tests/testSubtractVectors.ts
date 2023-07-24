@@ -1,6 +1,6 @@
-import {Vector} from '../Library/Math/Vector.js';
-import {subtructVectors} from '../Library/Math/VectorOperations/subtractVectors.js';
-import {TestError} from './TestError.js';
+import {Vector} from '../Library/Math/Vector'
+import {subtructVectors} from '../Library/Math/VectorOperations/subtractVectors'
+import {TestError} from './TestError'
 
 export function testSubtractVectors() {
 	const vectorDifference = subtructVectors(new Vector(1,2), new Vector(3,4));

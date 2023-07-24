@@ -1,4 +1,4 @@
-import {Point} from '../Math/Point.js'
+import {Point} from '../Math/Point'
 
 /**
  * Трансформация точек перед отображением на холсте.
