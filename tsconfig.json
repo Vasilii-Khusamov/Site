@@ -3,7 +3,8 @@
     "module": "ESNext",
     "target": "ESNext",
     "outDir": "docs",
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext", "DOM"],
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules"
