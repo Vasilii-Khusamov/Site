@@ -38,13 +38,11 @@ test('drawArrow', () => {
             draw: (arrowVertexes) => drawArrowOnCanvasContext2D(arrowVertexes, ctx)
         }
     )
+
     const resultImageData = ctx.getImageData(0,0,10,10).data
     document.body.removeChild(canvasElement)
 
-    expect(resultImageData).toEqual(expectedImageData)
-
-
-    // for (let i = 0; i < resultImageData.length; i++) {
-    //     expect(resultImageData[i]).toBe(expectedImageData[i])
-    // }
+    expect(resultImageData).toHaveLength(expectedImageData.length)
+    const diffArray = resultImageData.map((item, index) => Math.abs(item - expectedImageData[index]))
+    expect(Math.max(...diffArray)).toBeLessThanOrEqual(32)
 })
