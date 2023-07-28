@@ -17,9 +17,14 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.3",
+    "canvas": "^2.11.2",
     "http-server": "^14.1.1",
     "jest": "^29.6.2",
+    "jsdom": "^22.1.0",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/jsdom": "^21.1.1"
   }
 }
