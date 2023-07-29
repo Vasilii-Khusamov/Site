@@ -1,7 +1,7 @@
 import {createAxisXArrowVertexes} from './createAxisXArrowVertexes'
 import {Point} from '../Math/Point'
 
-test('createAxisXArrowVertexes', () => {
+test('createAxisXArrowVertexes', function () {
     const expectedArrowVertexes = [
         new Point(0, 0),
         new Point(100, 0),

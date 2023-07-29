@@ -2,7 +2,7 @@ import {Point} from '../Math/Point'
 import {Vector} from '../Math/Vector'
 import {createArrowVertexes} from './createArrowVertexes'
 
-test('createArrowVertexes', () => {
+test('createArrowVertexes', function () {
     const expectedArrowVertexes = [
         new Point(50, 0),
         new Point(50, 100),

@@ -1,7 +1,7 @@
 import {Point} from '../Math/Point'
 import {transformToScreen} from './transformToScreen'
 
-test('transformToScreen', () => {
+test('transformToScreen', function () {
     const canvasStub = {height:  100}
     const testPoint = new Point(10, 10)
     const resultPoint = transformToScreen(testPoint, canvasStub)

@@ -1,7 +1,7 @@
 import {Vector} from "../Vector";
 import {multiplyMatrixByVectorArray} from "./multiplyMatrixByVectorArray";
 
-test('multiplyMatrixByVectorArray', () => {
+test('multiplyMatrixByVectorArray', function () {
     const matrix = [
         [2, 2],
         [2, 2]

@@ -1,6 +1,6 @@
 import {createRotationMatrix} from "./createRotationMatrix";
 
-test('createRotationMatrix', () => {
+test('createRotationMatrix', function () {
     const testAngle = 20
     const expectedMatrix = [
         [0.40808206181339196, -0.9129452507276277],

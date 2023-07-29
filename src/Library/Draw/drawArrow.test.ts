@@ -17,7 +17,7 @@ const expectedImageData = Uint8ClampedArray.from([
     0,0,0,0,0,0,0,0,0,0,0,0,0
 ])
 
-test('drawArrow', () => {
+test('drawArrow', function () {
     const arrowStartPoint = new Point(0, 5)
     const arrowEndPoint = new Point(10, 5)
     const arrowHeadWidth = 2
