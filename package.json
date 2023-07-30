@@ -5,12 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "npm run compile && npm run copy-html-to-docs && npm run copy-css-to-docs && npm run copy-favicon-to-docs && npm run change-extensions",
-    "compile": "tsc",
-    "copy-html-to-docs": "xcopy src\\*.html docs /fye",
-    "copy-css-to-docs": "xcopy src\\*.css docs /fye",
-    "copy-favicon-to-docs": "xcopy src\\*.ico docs /fye",
-    "change-extensions": "node scripts/change-extensions docs"
+    "build": "parcel build"
   },
   "author": "Vasilii",
   "license": "ISC",
