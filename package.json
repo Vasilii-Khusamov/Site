@@ -2,16 +2,15 @@
   "name": "site",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
+  "source": "src/index.html",
   "scripts": {
+    "start": "parcel src/index.html",
     "build": "npm run compile && npm run copy-html-to-docs && npm run copy-css-to-docs && npm run copy-favicon-to-docs && npm run change-extensions",
     "compile": "tsc",
     "copy-html-to-docs": "xcopy src\\*.html docs /fye",
     "copy-css-to-docs": "xcopy src\\*.css docs /fye",
     "copy-favicon-to-docs": "xcopy src\\*.ico docs /fye",
-    "change-extensions": "node scripts/change-extensions docs",
-    "serve": "cd docs && http-server --port 3000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "change-extensions": "node scripts/change-extensions docs"
   },
   "author": "Vasilii",
   "license": "ISC",
@@ -21,10 +20,16 @@
     "http-server": "^14.1.1",
     "jest": "^29.6.2",
     "jsdom": "^22.1.0",
+    "parcel": "^2.9.3",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
   },
   "dependencies": {
     "@types/jsdom": "^21.1.1"
+  },
+  "targets": {
+    "default": {
+      "distDir": "docs"
+    }
   }
 }
