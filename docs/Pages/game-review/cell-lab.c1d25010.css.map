@@ -1,0 +1,1 @@
+{"mappings":"ACAA","sources":["Pages/game-review/cell-lab.c1d25010.css","src/Pages/game-review/cell-lab.css"],"sourcesContent":["#img {\n  width: 50%;\n  height: 50%;\n}\n\n/*# sourceMappingURL=cell-lab.c1d25010.css.map */\n","#img {\r\n    width: 50%;\r\n    height: 50%;\r\n}"],"names":[],"version":3,"file":"cell-lab.c1d25010.css.map"}
