@@ -5,15 +5,13 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build",
-    "serve:docs": "http-server docs"
+    "build": "parcel build"
   },
   "author": "Vasilii",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.3",
     "canvas": "^2.11.2",
-    "http-server": "^14.1.1",
     "jest": "^29.6.2",
     "jsdom": "^22.1.0",
     "parcel": "^2.9.3",
