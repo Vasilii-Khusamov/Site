@@ -25,7 +25,8 @@
   },
   "targets": {
     "default": {
-      "distDir": "docs"
+      "distDir": "docs",
+      "publicUrl": "/Site"
     }
   }
 }
